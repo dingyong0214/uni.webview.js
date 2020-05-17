@@ -10,14 +10,24 @@ const tui = require("@/static/js/uni.webview.js")
 Vue.prototype.tui = tui
 
 3、在页面中使用跳转api
-this.tui.navigateTo({
+this.tui.webView.navigateTo({
 	url: url
 })			
 				
-this.tui.switchTab({
+this.tui.webView.switchTab({
 	url: "/pages/index/index"
 })
+
+this.tui.webView.getEnv(res => {
+  uni.showModal({
+	content: JSON.stringify(res)
+  });
+});
 
 ...
 
 ``` 
+
+## 赞赏
+
+![image](https://thorui.cn/img/reward_small.jpg)
